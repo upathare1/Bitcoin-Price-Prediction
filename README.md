@@ -33,9 +33,9 @@ The dataset contains adjusted closing prices of SPY from January 2000 to August 
 
 Similar to the paper, we found the data to be non-stationary. First-differencing the data yielded a stationary time-series, hence justifying the paper’s use of 1 integration term in the ARIMA specification. This is also in line with the prevailing theory about stock market returns. There does appear to be some amount of heteroskedasticity in the returns, however we ignore this for now.
 
-![State Street S&P 500 Index (Adjusted Close)](images/SPY Raw Series.png)
+![State Street S&P 500 Index (Adjusted Close)](images/SPY%20Raw%20Series.png)
 
-![State Street S&P 500 Index First Differenced](images/SPY Differenced.png)
+![State Street S&P 500 Index First Differenced](images/SPY%20Differenced.png)
 
 Architecture
 ------------
@@ -55,7 +55,7 @@ A clipvalue parameter was added by us to avoid a vanishing gradient problem duri
 Training
 --------
 
-![Evolution of training loss](images/Training Progress.PNG)
+![Evolution of training loss](images/Training%20Progress.PNG)
 
 The training process uses 10 epochs. It is quite fast and is completed in 5-10 seconds at most.
 
@@ -68,9 +68,9 @@ Next, we use the LSTM model to perform rolling forecasts. This is done by lookin
 
 Firstly, to evaluate the paper’s claim of an improvement in RMSE for the level prediction we predicted over the entire test horizon.
 
-<span>0.5</span> ![LSTM Predictions](images/LSTM Prediction.PNG "fig:") [fig:subim1]
+<span>0.5</span> ![LSTM Predictions](images/LSTM%20Prediction.PNG "fig:") [fig:subim1]
 
-<span>0.5</span> ![ARIMA Predictions](images/ARIMA Prediction.PNG "fig:") [fig:subim2]
+<span>0.5</span> ![ARIMA Predictions](images/ARIMA%20Prediction.PNG "fig:") [fig:subim2]
 
 [fig:image2]
 
@@ -78,9 +78,9 @@ As is evident from the graphs, the two models are pretty much identical in their
 
 Next, to predict the returns we compute the percentage change between the observed price today and the predicted price tomorrow.
 
-<span>0.5</span> ![LSTM Returns](images/LSTM Returns.PNG "fig:") [fig:subim1]
+<span>0.5</span> ![LSTM Returns](images/LSTM%20Returns.PNG "fig:") [fig:subim1]
 
-<span>0.5</span> ![ARIMA Returns](images/ARIMA Returns.PNG "fig:") [fig:subim2]
+<span>0.5</span> ![ARIMA Returns](images/ARIMA%20Returns.PNG "fig:") [fig:subim2]
 
 [fig:image2]
 
@@ -226,7 +226,7 @@ For an initial run of the trading model, we made an arbitrary choice of hyperpar
 
 After running this strategy on the test set, we observe that the model traded 118 times and produced a Sharpe Ratio of 0.662 for a return of 73%.
 
-![Portfolio Return on test set](images/Portfolio Return.png "fig:") [fig:fig1]
+![Portfolio Return on test set](images/Portfolio%20Return.png "fig:") [fig:fig1]
 
 This looks very good as BTC only returned 50% over the same period. However, there is a catch. The return is highly hyperparameter dependent and our hyperparameters were chosen arbitrarily.
 
@@ -234,7 +234,7 @@ This looks very good as BTC only returned 50% over the same period. However, the
 
 After running a cross-validation approach, we found that the trading strategy is highly dependent on the chosen levels of trading aggressiveness (the open/close constants). Moreover the hyperparameters are highly unstable over time and sometimes lead to highly negative returns.
 
-![Portfolio Return on test set](images/Hyperparameter Tuning.png "fig:") [fig:fig1]
+![Portfolio Return on test set](images/Hyperparameter%20Tuning.png "fig:") [fig:fig1]
 
 In addition to the explicit hyper parameters, there are several implicit ones that we did not tune. For example:
 
