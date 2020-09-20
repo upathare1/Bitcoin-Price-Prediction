@@ -55,7 +55,7 @@ A clipvalue parameter was added by us to avoid a vanishing gradient problem duri
 Training
 --------
 
-![Evolution of training loss](images/Training%20Progress.PNG)
+![Evolution of training loss](images/Training%20Progress.png)
 
 The training process uses 10 epochs. It is quite fast and is completed in 5-10 seconds at most.
 
@@ -68,9 +68,9 @@ Next, we use the LSTM model to perform rolling forecasts. This is done by lookin
 
 Firstly, to evaluate the paper’s claim of an improvement in RMSE for the level prediction we predicted over the entire test horizon.
 
-<span>0.5</span> ![LSTM Predictions](images/LSTM%20Prediction.PNG "fig:") [fig:subim1]
+<span>0.5</span> ![LSTM Predictions](images/LSTM%20Prediction.png "fig:") [fig:subim1]
 
-<span>0.5</span> ![ARIMA Predictions](images/ARIMA%20Prediction.PNG "fig:") [fig:subim2]
+<span>0.5</span> ![ARIMA Predictions](images/ARIMA%20Prediction.png "fig:") [fig:subim2]
 
 [fig:image2]
 
@@ -78,9 +78,9 @@ As is evident from the graphs, the two models are pretty much identical in their
 
 Next, to predict the returns we compute the percentage change between the observed price today and the predicted price tomorrow.
 
-<span>0.5</span> ![LSTM Returns](images/LSTM%20Returns.PNG "fig:") [fig:subim1]
+<span>0.5</span> ![LSTM Returns](images/LSTM%20Returns.png "fig:") [fig:subim1]
 
-<span>0.5</span> ![ARIMA Returns](images/ARIMA%20Returns.PNG "fig:") [fig:subim2]
+<span>0.5</span> ![ARIMA Returns](images/ARIMA%20Returns.png "fig:") [fig:subim2]
 
 [fig:image2]
 
